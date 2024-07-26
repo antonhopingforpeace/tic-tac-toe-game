@@ -142,9 +142,7 @@ function GameController(playerOneName = "Player One", playerTwoName = "Player Tw
             board.makeNewGame();
             for(let i=0;i<3;i++){
                 for(let j=0;j<3;j++){
-
                     board.placeValue(i,j,0);
-                    alert(board.placeValue(i,j,0));
                 }
             }
             play = 0;
