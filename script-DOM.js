@@ -158,8 +158,57 @@ function GameController(playerOneName = "Player One", playerTwoName = "Player Tw
 
     return{
         playRound,
-        getActivePlayer
+        getActivePlayer,
+        getBoard : board.getBoard
     };
 }
 
-const game = GameController("Antonio", "Orlando");
+function ScreenController(){
+
+    const game = GameController();
+    const playerTurnH1 = document.querySelector(".turn");
+    const boardDiv = document.querySelector(".board");
+
+    const updateScreen = () => {
+
+        boardDiv.textContent="";
+
+        const board = game.getBoard();
+        const activePlayer = game.getActivePlayer();
+
+        playerTurnH1.textContent = `${activePlayer.name}'s turn`;
+
+        board.forEach((row, r_index)=>{
+            row.forEach((cell, c_index)=>{
+
+                const cellButton = document.createElement("button");
+                cellButton.classList.add("cell");
+                cellButton.dataset.row = r_index;
+                cellButton.dataset.column = c_index;
+                cellButton.textContent = cell.getValue();
+
+                boardDiv.appendChild(cellButton);
+            })
+        })
+    }
+
+    function clickBoard(e){
+        const selectedRow = e.target.dataset.row;
+        const selectedColumn = e.target.dataset.column;
+
+        if(!selectedColumn || !selectedRow){
+            return;
+        }
+
+        game.playRound(selectedRow, selectedColumn);
+        updateScreen();
+    }
+
+    boardDiv.addEventListener("click", clickBoard);
+    updateScreen();
+
+}
+
+ScreenController();
+
+// const game = GameController("Antonio", "Orlando");
