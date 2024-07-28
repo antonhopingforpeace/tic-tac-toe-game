@@ -7,10 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="turn"></h1>
-        <div class="board"></div>
+    <div class="header">
+        <h1>TIC-TAC-TOE GAME</h1>
     </div>
+    
+    <dialog>
+        <div class="dialog-container">
+            <h1 class="dialog-passage"></h1>
+            <button class="close-dialog">Cancel</button>
+        </div>
+    </dialog>
+
+    <div class="container">
+        <div class="sidebar">
+            <h1>NAMES:</h1>
+            <form class="change-names">
+                <label for="player-one-name">
+                    First player (X):
+                </label>
+                <input type="text" id="player-one-name" placeholder="PlayerOneName">
+
+                <label for="player-one-name">
+                    Second player (O):
+                </label>
+                <input type="text" id="player-two-name" placeholder="PlayerTwoName">
+                <input type="button" id="names-button" value="change names">
+            </form>
+        </div>
+        <div class="main">
+            <button class="start">Start New Game</button>
+            <div class="board"></div>
+            <div class="turn">
+                <div class="player-one"></div>
+                <div class="player-two"></div>
+            </div>
+        </div>
+    </div>
+    
     <script src="script-DOM.js"></script>
 </body>
 </html>
