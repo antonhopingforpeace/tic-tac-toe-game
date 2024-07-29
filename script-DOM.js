@@ -184,6 +184,10 @@ function ScreenController(){
         playerTwoName = playerTwoNameInput.value;
         playerOneNameInput.value="";
         playerTwoNameInput.value="";
+        const playerOneActiveName = document.querySelector(".player-1");
+        const playerTwoActiveName = document.querySelector(".player-2");
+        playerOneActiveName.textContent = playerOneName;
+        playerTwoActiveName.textContent = playerTwoName;
     })
 
     const game = GameController(playerOneName,playerTwoName);
@@ -262,11 +266,6 @@ function ScreenController(){
             // alert("The game is a tie");
             game.removeWinner();
         }
-        // else if(game.getWinner()===2||game.getWinner()===3){
-        //     dialogOperator(`The winner of the game is Player ${game.getWinner()-1}`);
-        //     // alert(`The winner of the game is Player ${game.getWinner()-1}`);
-        //     game.removeWinner();
-        // }
         else if(game.getWinner()===2){
             dialogOperator(`The winner of the game is ${playerOneName}`);
             game.removeWinner();

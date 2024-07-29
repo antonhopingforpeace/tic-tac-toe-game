@@ -20,20 +20,32 @@
 
     <div class="container">
         <div class="sidebar">
-            <h1>NAMES:</h1>
-            <form class="change-names">
-                <label for="player-one-name">
-                    First player (X):
-                </label>
-                <input type="text" id="player-one-name" placeholder="PlayerOneName">
-
-                <label for="player-one-name">
-                    Second player (O):
-                </label>
-                <input type="text" id="player-two-name" placeholder="PlayerTwoName">
-                <input type="button" id="names-button" value="change names">
-            </form>
-        </div>
+            <div class="first-box">
+                <h1>NAMES:</h1><br>
+                <form class="change-names">
+                    <div class="label">
+                        <label for="player-one-name">
+                            First player (X):
+                        </label>
+                        <input type="text" id="player-one-name" placeholder="PlayerOneName">    
+                    </div>
+                    <div class="label">
+                        <label for="player-one-name">
+                            Second player (O):
+                        </label>
+                        <input type="text" id="player-two-name" placeholder="PlayerTwoName">
+                    </div>
+                    <input type="button" id="names-button" value="change names">
+                </form>
+            </div>
+            <div class="second-box">
+                <h1>ACTIVE PLAYERS:</h1><br>
+                <h2>Player 1:</h2>
+                <div class="player-1">______________</div><br>
+                <h2>Player 2:</h2>
+                <div class="player-2">______________</div>
+            </div>
+        </div> 
         <div class="main">
             <button class="start">Start New Game</button>
             <div class="board"></div>

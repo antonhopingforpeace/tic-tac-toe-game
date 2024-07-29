@@ -58,8 +58,49 @@ dialog{
 }
 .sidebar{
     background-color: lightblue;
-    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:100px;
 }
+.first-box{
+    padding-top: 50px;
+}
+#names-button{
+    border: none;
+    width: 90%;
+    padding:5px;
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+#names-button:hover{
+    font-weight: bolder;
+    border: 1px solid black;
+    background-color: aquamarine;
+}
+#names-button:active{
+    color: white;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: center;
+    font-size: large;
+}
+#player-one-name,
+#player-two-name{
+    padding: 5px 0 5px 0;
+    font-size: 600;
+    width: min(90%, 300px)
+}
+.player-1,
+.player-2{
+    margin-top:5px;
+    font-size: larger;
+}
+
 .header{
     display: flex;
     justify-content: center;
