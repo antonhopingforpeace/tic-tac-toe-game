@@ -139,13 +139,8 @@ function GameController(playerOneName, playerTwoName){
             play--;
            }
 
-        if(play>8){
-            winner = 1;
-            console.log("There is no winner, the game is a tie");
-            console.log("Starting a new game!");
-            createGame();     
-        }
-        else if(board.checkWinner()===1){
+        
+        if(board.checkWinner()===1){
             console.log(`The winner of the game is ${getActivePlayer().name}`);
 
             winner = getActivePlayer().value +1;
@@ -153,6 +148,13 @@ function GameController(playerOneName, playerTwoName){
             console.log("Starting a new game!");
             createGame();
         }
+        else if(play>8){
+            winner = 1;
+            console.log("There is no winner, the game is a tie");
+            console.log("Starting a new game!");
+            createGame();     
+        }
+        
         if(placement!=0){
             switchPlayerTurn();
             printNewRound();
